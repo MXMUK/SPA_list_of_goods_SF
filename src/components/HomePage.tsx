@@ -15,6 +15,7 @@ export const HomePage: FC = memo(() => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+
   const dispatch = useDispatch();
 
   const loadGoods = useCallback(async () => {
@@ -51,7 +52,15 @@ export const HomePage: FC = memo(() => {
             </span>
           </div>
 
-          <div className="block">{true ? <GoodsList isLoading={isLoading} /> : <Loader />}</div>
+          <div className="block">
+            {true ? (
+              <GoodsList
+                isLoading={isLoading}
+              />
+            ) : (
+              <Loader />
+            )}
+          </div>
         </div>
       </div>
 
